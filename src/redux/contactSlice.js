@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { addContactThunk, fetchContactsThunk,deleteContactThunk } from "./operations";
 
 
+
 const contactsInitialState= {
     items: [],
     isLoading: false,
@@ -41,10 +42,11 @@ const handleRejected =(state,{payload})=>
       state.items.push(payload); 
       state.error=null; })
          .addCase(addContactThunk.rejected,handleRejected)
+         
        
       }})      
 
- export const { deleteContact, addContact } = contactSlice.actions;
+
 export const contactReducer=contactSlice.reducer;
 
 // export const contactSlice= createSlice(

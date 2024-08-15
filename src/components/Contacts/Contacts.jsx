@@ -18,8 +18,8 @@ export  const Contacts=() => {
 
  return <>
      <ul>
-         {isLoading ? (<div>Is Loading...</div>):( filterContacts.map(({ name, id, phone,}) => {
-              return <li key={id}>{name}: {phone}
+         {isLoading ? (<div>Is Loading...</div>):( filterContacts.map(({ name, id, number,}) => {
+              return <li key={id}>{name}: {number}
                 <button  type="button" onClick={()=>
                   handleDelete(id)
                 }>Delete</button>
@@ -32,7 +32,7 @@ Contacts.propTypes = {
     PropTypes.exact({
       id: PropTypes.string.isRequired,
       name: PropTypes.string,
-      phone: PropTypes.string,
+      number: PropTypes.string,
     })
   ),
 };
